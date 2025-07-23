@@ -203,12 +203,17 @@
       margin-top: 10px; /* مسافة من الزر */
       margin-right: 0;
     }
-
     .site-title {
-      font-size: 20px; /* عنوان موقع أصغر */
-      margin-bottom: 5px;
-    }
-
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:50%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
     .menu-image {
       max-width: 90%; /* أقصى عرض للصور على الجوال */
     }
@@ -239,11 +244,6 @@
     header img {
       height: 60px;
     }
-
-    .site-title {
-      font-size: 18px;
-    }
-
     table {
       font-size: 12px;
       min-width: unset; /* السماح للجدول بالانكماش إذا سمح المحتوى بذلك */
@@ -260,10 +260,8 @@
 <audio id="clickSound" src="-n44Fhw7Kgo.mp3"></audio>
 
 <header>
-  <div>
     <button class="toggle-btn" onclick="playSound(); toggleSidebar()">☰ القائمة</button>
     <span class="site-title">Jana Gold "الحلاوة حلاوتنا"</span>
-  </div>
   <img src="2130.png" alt="JANA GOLD Logo" />
 </header>
 
