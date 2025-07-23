@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    font-size: 16px; /* حجم خط أساسي */
+    font-size: 16px; 
   }
 
   header {
@@ -26,53 +26,52 @@
     border-bottom: 3px solid gold;
     color: #F2E80F;
     flex-wrap: wrap;
-    position: relative; /* ضروري لسياق z-index */
-    z-index: 1001; /* التأكد أن الهيدر فوق السايدبار عند الفتح */
+    position: relative; 
+    z-index: 1001; 
   }
 
   header img {
     height: 100px;
-    max-width: 100%; /* لضمان تصغير اللوجو */
-    margin-right: 10px; /* ضبط المسافة */
+    max-width: 100%; 
+    margin-right: 10px; 
   }
 
-  .toggle-btn {
-    background-color: gold;
+ .toggle-btn {
+    background-color: #E8E6AF;
     color: black;
     border: none;
-    padding: 8px 12px;
-    font-size: 20px; /* حجم خط مبدئي معدل */
+    padding: 12px 12px;
+    font-size: 30px;
     cursor: pointer;
-    border-radius: 8px;
-    margin-bottom: 0; /* إزالة الهامش لتحسين المحاذاة */
+    border-radius: 20px;
+    margin-bottom: 0;
   }
 
   .container {
     display: flex;
     flex-direction: row;
-    /* ضبط الحد الأدنى للارتفاع لملء الشاشة باستثناء الهيدر */
-    min-height: calc(100vh - 120px); /* 120px قيمة تقديرية لارتفاع الهيدر، يمكن ضبطها */
+    min-height: calc(100vh - 120px); 
   }
 
   .sidebar {
     width: 220px;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 15px;
-    min-height: 100%; /* استخدام 100% من ارتفاع الحاوية الأم */
+    min-height: 100%; 
     transition: transform 0.3s ease;
-    flex-shrink: 0; /* منع الشريط الجانبي من الانكماش */
+    flex-shrink: 0;
   }
 
   .sidebar.hidden {
-    transform: translateX(100%); /* عند الإخفاء، يكون خارج الشاشة لليمين */
+    transform: translateX(100%);
     position: absolute;
     right: 0;
-    top: 0; /* سيتم ضبطها لاحقاً بواسطة JS لارتفاع الهيدر */
-    height: 100%; /* لضمان أخذ الارتفاع الكامل */
+    top: 0; 
+    height: 100%; 
     z-index: 999;
   }
   
-  .sidebar:not(.hidden) { /* عندما لا يكون مخفيًا، يكون مرئيًا على الشاشة */
+  .sidebar:not(.hidden) { 
     transform: translateX(0%);
   }
 
@@ -95,14 +94,14 @@
     flex-grow: 1;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.1);
-    min-height: 100%; /* استخدام 100% من ارتفاع الحاوية الأم */
-    color: white; /* ضمان وضوح النص */
+    min-height: 100%; 
+    color: white; 
   }
 
   .content h2 {
     font-size: 20px;
     margin-bottom: 15px;
-    text-align: center; /* توسيط التعليمات الأولية */
+    text-align: center; 
   }
 
   .table-container {
@@ -114,7 +113,7 @@
     border-collapse: collapse;
     margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.7);
-    min-width: 350px; /* تقليل الحد الأدنى للعرض للشاشات الصغيرة جدًا */
+    min-width: 350px; 
   }
 
   th, td {
@@ -139,12 +138,12 @@
   #searchBox {
     margin-bottom: 10px;
     padding: 8px;
-    width: calc(100% - 16px); /* ضبط العرض ليتضمن المسافات البادئة */
+    width: calc(100% - 16px); 
     max-width: 300px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* لتضمين الحشوة في حساب العرض */
+    box-sizing: border-box; 
   }
 
   .menu-image {
@@ -153,8 +152,8 @@
     border: 3px solid gold;
     border-radius: 8px;
     display: block;
-    margin-left: auto; /* توسيط الصورة */
-    margin-right: auto; /* توسيط الصورة */
+    margin-left: auto; 
+    margin-right: auto; 
   }
 
   #instruction {
@@ -162,7 +161,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
-    color: red; /* ضمان وضوح التعليمات */
+    color: #2197C9; 
   }
 
   /* --- Mobile Styles --- */
@@ -173,23 +172,23 @@
 
     .sidebar {
       width: 100%;
-      height: auto; /* السماح للارتفاع بالتكيف مع المحتوى */
+      height: auto; 
       position: absolute;
-      top: 0; /* سيتم ضبطه بواسطة JS */
+      top: 0; 
       right: 0;
       z-index: 1000;
-      padding-bottom: 20px; /* إضافة بعض الحشوة السفلية */
+      padding-bottom: 20px; 
     }
 
     .content {
       padding: 15px;
-      margin-top: 0; /* إزالة أي هامش علوي محتمل من اتجاه المرونة السابق */
+      margin-top: 0; 
     }
 
     .toggle-btn {
-      font-size: 24px; /* أكبر قليلاً لسهولة الضغط */
+      font-size: 24px;
       padding: 10px 15px;
-      margin-bottom: 10px; /* إضافة مسافة أسفل الزر */
+      margin-bottom: 10px; 
     }
 
     header {
@@ -199,8 +198,8 @@
     }
 
     header img {
-      height: 80px; /* لوجو أصغر على الجوال */
-      margin-top: 10px; /* مسافة من الزر */
+      height: 80px; 
+      margin-top: 10px;
       margin-right: 0;
     }
     .site-title {
@@ -215,23 +214,23 @@
   white-space: nowrap;
 }
     .menu-image {
-      max-width: 90%; /* أقصى عرض للصور على الجوال */
+      max-width: 90%;
     }
 
     #searchBox {
-      width: calc(100% - 16px); /* لضمان امتداده بالعرض الكامل */
+      width: calc(100% - 16px);
     }
 
     table {
-      font-size: 14px; /* ضبط حجم خط الجدول */
+      font-size: 14px;
     }
 
     th, td {
-      padding: 8px; /* تقليل حشوة الخلايا */
+      padding: 8px; 
     }
   }
 
-  @media (max-width: 480px) { /* شاشات أصغر حجماً */
+  @media (max-width: 480px) { 
     body {
       font-size: 14px;
     }
@@ -246,7 +245,7 @@
     }
     table {
       font-size: 12px;
-      min-width: unset; /* السماح للجدول بالانكماش إذا سمح المحتوى بذلك */
+      min-width: unset; 
     }
 
     th, td {
@@ -289,11 +288,10 @@
 <script>
   const sidebar = document.getElementById("sidebar");
   const clickSound = document.getElementById("clickSound");
-  const header = document.querySelector('header'); // الحصول على عنصر الهيدر
+  const header = document.querySelector('header'); 
 
   function toggleSidebar() {
     sidebar.classList.toggle("hidden");
-    // تعيين موضع الشريط الجانبي العلوي ديناميكيًا بناءً على ارتفاع الهيدر
     const headerHeight = header.offsetHeight;
     sidebar.style.top = `${headerHeight}px`;
   }
@@ -541,7 +539,7 @@
     const tr = table.getElementsByTagName("tr");
 
     for (let i = 1; i < tr.length; i++) {
-      const td = tr[i].getElementsByTagName("td")[1]; // البحث باسم الصنف
+      const td = tr[i].getElementsByTagName("td")[1]; 
       if (td) {
         const txtValue = td.textContent || td.innerText;
         tr[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
